@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+//include react bootstrap css
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Index from "./components/index_page";
+
 
 function App() {
-  return (
-    <div className='myClass'>
-      <h1>My First React App</h1>
-    </div>
-  );
+  return <Index/>;
 }
 
 export default App;
