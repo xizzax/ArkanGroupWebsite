@@ -12,7 +12,6 @@ function Index() {
   return (
     <>
       
-
       <BrowserRouter>
       <NavBar />
         <Routes>
