@@ -1,0 +1,79 @@
+.box {
+    background-color: #ffc17829;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+.about {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.useful-links {
+    flex: 1;
+}
+
+.contact {
+    flex: 1;
+}
+
+.footer-heading {
+    font-size: 22px;
+    color: white;
+    font-weight: 550;
+    margin: 0em 0.5em;
+}
+
+.img-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.about-logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    align-self: center;
+}
+
+.about-para {
+    display: block;
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.banner {
+    margin-top: 10px;
+    padding: 25px;
+    background-color: #a63535;
+    color: white;
+    text-align: center;
+}
+
+.useful-links {
+    text-align: center;
+    /* padding: 10px; */
+}
+
+.useful-links-list {
+    padding: 25px;
+}
+
+.ull-item-link {
+    display: block;
+    font-size: 20px;
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}

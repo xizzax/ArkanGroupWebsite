@@ -6,14 +6,14 @@ import Agro from "./agro";
 import Fertilizer from "./fertilizer";
 import OilGas from "./oil-gas";
 import ContactUs from "./contact-us";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import Footer from "./footer";
+import { BrowserRouter, Switch, Route, Routes } from "react-router-dom";
 
 function Index() {
   return (
     <>
-      
       <BrowserRouter>
-      <NavBar />
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about-us" element={<AboutUs />} />
@@ -23,7 +23,9 @@ function Index() {
           <Route path="oil-gas" element={<OilGas />} />
           <Route path="contact-us" element={<ContactUs />} />
         </Routes>
-      </BrowserRouter>
+        <Footer />
+      
+    </BrowserRouter>
     </>
   );
 }
