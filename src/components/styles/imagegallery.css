@@ -1,16 +1,17 @@
-.gallery-div{
+/* .gallery-div{
     height: 100px;
 
-}
+} */
 
 .caption-heading{
-    font-size: 2.5em;
-    font-weight: bold;
+    font-size: 2em;
+    font-weight: bolder;
 }
 
 .caption-text{
     font-style: italic;
-    font-size: 1.5em;
+    font-size: 1.05em;
+    font-weight: bold;
 }
 
 .caption{

@@ -40,9 +40,8 @@ function Home() {
   return (
     <>
       <Container fluid>
-        {/* put this in a separate component maybe?? */}
         <FadeInSection>
-          <Row className="margin1 imggallery">
+          <Row className="margin1">
             <ImageGallery />
           </Row>
         </FadeInSection>

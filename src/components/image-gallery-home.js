@@ -1,14 +1,14 @@
 import Carousel from "react-bootstrap/Carousel";
-import chairman from "./srcs/chairman.png";
-import logo from "./srcs/logo.png";
 import refinery from "./srcs/refinery.jpg";
+import shipping from "./srcs/shipping.jpg";
+import trading from "./srcs/trading.jpg";
 import "./styles/imagegallery.css";
 function ImageGallery() {
   return (
-    <div className="gallery-div">
+    <div>
       <Carousel>
         <Carousel.Item className="carousel">
-          <img className="d-block w-100" src={refinery} alt="First slide" />
+          <img className="d-block w-100" src={shipping} alt="First slide" />
           <Carousel.Caption className="caption">
             <h3 className="caption-heading">Shipping</h3>
             <p className="caption-text">
@@ -18,7 +18,7 @@ function ImageGallery() {
         </Carousel.Item>
 
         <Carousel.Item>
-          <img className="d-block w-100" src={refinery} alt="Second slide" />
+          <img className="d-block w-100" src={trading} alt="Second slide" />
 
           <Carousel.Caption className="caption">
             <h3 className="caption-heading">Trading</h3>
@@ -34,7 +34,7 @@ function ImageGallery() {
           <Carousel.Caption className="caption">
             <h3 className="caption-heading">Energy Sector</h3>
             <p className="caption-text">
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              We provide services in various oil and gas channels
             </p>
           </Carousel.Caption>
         </Carousel.Item>
