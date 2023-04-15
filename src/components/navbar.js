@@ -23,7 +23,7 @@ function NavBar() {
           <Container>
             {/* adding the logo  */}
             <Navbar.Brand href="/">
-              <img src={logo} width="100" height="100" alt="arkan logo" />
+              <img src={logo} width="75" height="75" alt="arkan logo" />
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
