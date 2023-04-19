@@ -12,8 +12,8 @@ function AboutUs() {
       <Container fluid>
         <Row>
           <Col lg>
-          <FadeInSection>
-            <img src={logo} alt="logo" className="logo" />
+            <FadeInSection>
+              <img src={logo} alt="logo" className="logo" />
             </FadeInSection>
           </Col>
         </Row>
@@ -25,8 +25,7 @@ function AboutUs() {
           </Col>
         </Row>
         <Row>
-          
-            <Col lg>
+          <Col lg>
             <FadeInSection>
               <h2> We Are Global </h2>
               <p className="about-us-paragraph">
@@ -48,61 +47,40 @@ function AboutUs() {
                 portfolios, including, but not limited to, oil and gas,
                 renewable energy, retail, and hospitality.
               </p>
-              </FadeInSection>
-            </Col>
-            <Col lg>
+            </FadeInSection>
+          </Col>
+          <Col lg>
             <FadeInSection>
               <h2> Want to learn more? </h2>
               <div className="div-buttons">
                 <div className="btns">
-                  <Button
-                    to="/contact-us"
-                    //   href="https://www.arkangroup.com/about-us/""
-                    target="_blank"
-                  >
-                    Contact Us
-                  </Button>
+                  <Link to="/contact-us">
+                    <Button>Contact Us</Button>
+                  </Link>
                 </div>
                 <div className="btns">
-                  <Button
-                    variant="primary"
-                    href="https://www.arkangroup.com/about-us/"
-                    target="_blank"
-                  >
-                    Learn more about trading options
-                  </Button>
+                  <Link to="/trading">
+                    <Button>Learn more about trading options</Button>
+                  </Link>
                 </div>
                 <div className="btns">
-                  <Button
-                    variant="primary"
-                    href="https://www.arkangroup.com/about-us/"
-                    target="_blank"
-                  >
-                    Learn more about shipping options
-                  </Button>
+                  <Link to="/shipping">
+                    <Button>Learn more about shipping options</Button>
+                  </Link>
                 </div>
                 <div className="btns">
-                  <Button
-                    variant="primary"
-                    href="https://www.arkangroup.com/about-us/"
-                    target="_blank"
-                  >
-                    Click here if you are a supplier
-                  </Button>
+                  <Link to="/supplier">
+                    <Button>Click here if you are a supplier</Button>
+                  </Link>
                 </div>
                 <div className="btns">
-                  <Button
-                    variant="primary"
-                    href="https://www.arkangroup.com/about-us/"
-                    target="_blank"
-                  >
-                    Click here if you are a shipper
-                  </Button>
+                  <Link to="/shipper">
+                    <Button>Click here if you are a shipper</Button>
+                  </Link>
                 </div>
               </div>
-              </FadeInSection>
-            </Col>
-          
+            </FadeInSection>
+          </Col>
         </Row>
       </Container>
     </div>

@@ -1,0 +1,11 @@
+.shipping-heading{
+    margin: 1em;
+
+}
+
+.shipping-text {
+    margin: 1em;
+    padding: 1em;
+    font-size: 1.1em;
+    text-align: center;
+  }
