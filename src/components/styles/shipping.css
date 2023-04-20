@@ -1,11 +1,65 @@
-.shipping-heading{
-    margin: 1em;
-
+.shipping-heading {
+  margin: 1em;
 }
 
 .shipping-text {
-    margin: 1em;
+  margin: 1em;
+  padding: 1em;
+  font-size: 1.1em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#contact-shipper-button {
+    margin-top: 1em;
+  color: black;
+  background-color: white !important;
+  border-color: white;
+}
+
+#contact-shipper-button:active,
+#contact-shipper-button:visited {
+  background-color: white !important;
+  border-color: white;
+}
+
+#contact-shipper-button:hover {
+  background-color: black !important;
+  border-color: #a63535;
+  color: white !important;
+}
+
+.contact-shipper-box {
+  background-color: #a63535;
+  color: white;
+  border-radius: 10px;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 2em;
+}
+
+.catchphrase-box{
+    border: 0.15em solid #a63535;
+    border-radius: 10px;
+    background-color: white;
+    font-size: large;
+    font-weight: bolds;
+    margin-left: 2em;
+    margin-right: 2em;
     padding: 1em;
-    font-size: 1.1em;
-    text-align: center;
-  }
+}
+
+.image-inside{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.globe-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+
+}

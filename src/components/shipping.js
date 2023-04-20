@@ -1,16 +1,19 @@
 import "./styles/shipping.css";
 import shipping2 from "./srcs/shipping2.jpg";
+import globe from "./srcs/globe.jpg";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import FadeInSection from "./fadeinsection";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 function Shipping() {
   return (
     <>
       <Container fluid>
         <Row>
-          <Col>
+          <Col sm>
             <FadeInSection>
               <Image src={shipping2} fluid />
               <h1 className="shipping-heading">Shipping</h1>
@@ -20,12 +23,12 @@ function Shipping() {
 
         {/* first para */}
         <Row>
-          <Col>
+          {/* <Col sm>
             <FadeInSection>
-              <div>Some text here</div>
+              <div className="shipping-text">arkan grp with a nice image</div>
             </FadeInSection>
-          </Col>
-          <Col>
+          </Col> */}
+          <Col sm>
             <FadeInSection>
               <div class="shipping-text">
                 <p>
@@ -40,9 +43,12 @@ function Shipping() {
 
         {/* 2nd para */}
         <Row>
-          <Col>
+          <Col sm>
             <FadeInSection>
               <div class="shipping-text">
+                <p className="catchphrase-box">
+                  Arkan Shipping: Strong and Growing
+                </p>
                 <p>
                   Through an international network of subsidiaries and
                   associated partners, Arkan Group currently owns and operates a
@@ -56,21 +62,28 @@ function Shipping() {
               </div>
             </FadeInSection>
           </Col>
-          <Col>
+          <Col sm>
             <FadeInSection>
-              <div>Some text here</div>
+              <div className="shipping-text image-inside">
+                <Image src={globe} fluid className="globe-img" />
+              </div>
             </FadeInSection>
           </Col>
         </Row>
 
         {/* 3rd para */}
         <Row>
-          <Col>
+          <Col sm>
             <FadeInSection>
-              <div>Some text here</div>
+              <div className="shipping-text contact-shipper-box">
+                As part of shipping norms and requirements, all cargo at Arkan
+                Group is certified and tested as a port of shipment. These
+                inspections are countersigned by our customer representatives as
+                well, prior to loading on the vessel.
+              </div>
             </FadeInSection>
           </Col>
-          <Col>
+          <Col sm>
             <FadeInSection>
               <div class="shipping-text">
                 <p>
@@ -90,7 +103,7 @@ function Shipping() {
 
         {/* 4th para */}
         <Row>
-          <Col>
+          <Col sm>
             <FadeInSection>
               <div class="shipping-text">
                 <p>
@@ -104,9 +117,14 @@ function Shipping() {
               </div>
             </FadeInSection>
           </Col>
-          <Col>
+          <Col sm>
             <FadeInSection>
-              <div>Some text here</div>
+              <div className="shipping-text contact-shipper-box">
+                Are you a shipper looking for a reliable partner? <br />
+                <Link to="/shipper">
+                  <Button id="contact-shipper-button"> Contact Us </Button>
+                </Link>
+              </div>
             </FadeInSection>
           </Col>
         </Row>
