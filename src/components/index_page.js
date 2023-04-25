@@ -7,6 +7,8 @@ import Fertilizer from "./fertilizer";
 import OilGas from "./oil-gas";
 import ContactUs from "./contact-us";
 import Footer from "./footer";
+import SupplierForm from "./supplier";
+import ShippingForm from "./shipper";
 import { BrowserRouter, Switch, Route, Routes } from "react-router-dom";
 
 function Index() {
@@ -22,6 +24,8 @@ function Index() {
           <Route path="fertilizer" element={<Fertilizer />} />
           <Route path="oil-gas" element={<OilGas />} />
           <Route path="contact-us" element={<ContactUs />} />
+          <Route path="supplier" element={<SupplierForm />} />
+          <Route path="shipper" element={<ShippingForm />}/>
         </Routes>
         <Footer />
       
