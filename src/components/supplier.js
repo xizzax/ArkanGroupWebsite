@@ -62,7 +62,7 @@ function SupplierForm() {
                 </label>
                 <br />
                 <label>
-                  What do you want to ship?:
+                  What do you want to ship?
                   <input
                     type="text"
                     value={shipmentType}
@@ -71,12 +71,12 @@ function SupplierForm() {
                 </label>
                 <br />
                 <label>
-                  Why do you choose Arkan Group?:
+                  Why do you choose Arkan Group?
                   <textarea value={whyArkan} onChange={handleWhyArkanChange} />
                 </label>
                 <br />
                 <label>
-                  What defines you best?:
+                  What defines you best?
                   <textarea
                     value={definingTrait}
                     onChange={handleDefiningTraitChange}

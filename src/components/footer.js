@@ -7,12 +7,6 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <>
-    <Container>
-      <Row>
-        <Col>
-        </Col>
-      </Row>
-    </Container>
       <footer className="footer">
         <div className="box">
           <div className="about">
