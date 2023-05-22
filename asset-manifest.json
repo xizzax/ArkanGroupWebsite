@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.a1c68f73.css",
+    "main.js": "/react-gh-pages/static/js/main.634bfb1a.js",
+    "static/js/787.f441ebf0.chunk.js": "/react-gh-pages/static/js/787.f441ebf0.chunk.js",
+    "static/media/shipping.jpg": "/react-gh-pages/static/media/shipping.166e6a4ef7bc4a4ac31e.jpg",
+    "static/media/refinery.jpg": "/react-gh-pages/static/media/refinery.3d05f51082c35aaae96d.jpg",
+    "static/media/shipping2.jpg": "/react-gh-pages/static/media/shipping2.1f435928ccff01016fb6.jpg",
+    "static/media/globe.jpg": "/react-gh-pages/static/media/globe.8b3a865eb9734aa43461.jpg",
+    "static/media/trading.jpg": "/react-gh-pages/static/media/trading.79137827b10aeb6386e6.jpg",
+    "static/media/chairman.png": "/react-gh-pages/static/media/chairman.0341e076421621380044.png",
+    "static/media/logo.png": "/react-gh-pages/static/media/logo.893d117abc6506d1b3bb.png",
+    "index.html": "/react-gh-pages/index.html",
+    "main.a1c68f73.css.map": "/react-gh-pages/static/css/main.a1c68f73.css.map",
+    "main.634bfb1a.js.map": "/react-gh-pages/static/js/main.634bfb1a.js.map",
+    "787.f441ebf0.chunk.js.map": "/react-gh-pages/static/js/787.f441ebf0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1c68f73.css",
+    "static/js/main.634bfb1a.js"
+  ]
+}
