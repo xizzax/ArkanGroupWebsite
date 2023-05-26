@@ -8,7 +8,9 @@ import OilGas from "./oil-gas";
 import ContactUs from "./contact-us";
 import Footer from "./footer";
 import SupplierForm from "./supplier";
-import ShippingForm from "./shipper";
+import ShippingForm from "./shipper"; 
+import AdminLogin from "./admin-login";
+import AdminDashboard from "./admin-dashboard";
 import { BrowserRouter, Switch, Route, Routes } from "react-router-dom";
 
 function Index() {
@@ -26,6 +28,8 @@ function Index() {
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="supplier" element={<SupplierForm />} />
           <Route path="shipper" element={<ShippingForm />}/>
+          <Route path="admin-login" element={<AdminLogin />} />
+          <Route path="admin-dashboard" element={<AdminDashboard />} />
         </Routes>
         <Footer />
       

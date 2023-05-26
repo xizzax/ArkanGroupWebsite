@@ -42,6 +42,7 @@ function NavBar() {
                   <NavDropdown.Item as={NavLink} to="/oil-gas">Oil & Gas</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link as={NavLink} to="/contact-us" className="link-name">Contact Us</Nav.Link>
+                <Nav.Link as={NavLink} to="/admin-login" className="link-name">Admin Login</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
