@@ -4,7 +4,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function AdminLogin() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //we need a username and a password for the admin
 
@@ -14,8 +14,9 @@ function AdminLogin() {
 
   // the username and password stored in our database
   // dummy data for now -  will be stored in DB later
-  const stored_username = "admin";
-  const stored_password = "12345";
+
+  const [stored_username, setStoredUsername] = useState("admin");
+  const [stored_password, setStoredPassword] = useState("12345");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -25,9 +26,10 @@ function AdminLogin() {
     } else {
       if (username === stored_username && password === stored_password) {
         //redirect to admin dashboard
-        navigate("/admin-dashboard");
+        navigate("/admin-dashboard", {
+          state: { username, password },
+        });
         window.alert("Login Successful");
-
       } else {
         window.alert("Incorrect username or password");
       }
@@ -53,32 +55,32 @@ function AdminLogin() {
         <Row>
           <Col md>
             <div className="form-div">
-            <form onSubmit={handleLogin} className="admin-login-form">
-              <label>
-                Username
+              <form onSubmit={handleLogin} className="admin-login-form">
+                <label>
+                  Username
+                  <input
+                    type="text"
+                    value={username}
+                    onChange={handleUsernameChange}
+                  />
+                </label>
+                <br />
+                <label>
+                  Password
+                  <input
+                    className="admin-login-input"
+                    type="password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                  />
+                </label>
                 <input
-                  type="text"
-                  value={username}
-                  onChange={handleUsernameChange}
+                  type="submit"
+                  value="Login"
+                  className="btns-forms"
+                  id="login-btn"
                 />
-              </label>
-              <br />
-              <label>
-                Password
-                <input
-                  className="admin-login-input"
-                  type="password"
-                  value={password}
-                  onChange={handlePasswordChange}
-                />
-              </label>
-              <input
-                type="submit"
-                value="Login"
-                className="btns-forms"
-                id="login-btn"
-              />
-            </form>
+              </form>
             </div>
           </Col>
         </Row>
