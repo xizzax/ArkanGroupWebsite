@@ -12,3 +12,11 @@
   border: 1.5px solid black;
   border-radius: 5px; 
 }
+
+.warning-note{
+  background-color: black;
+  color: white;
+  padding: 0.25em 1em;
+  border: 1px solid black;
+  border-radius: 5px;
+}
