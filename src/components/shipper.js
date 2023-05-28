@@ -23,6 +23,8 @@ function ShippingForm() {
       howHeardAbout,
       expectations
     );
+    //WALEED: code to submit form data to database
+
     window.alert("submitted!");
     // Clear all input fields
     setShippingCompany("");

@@ -52,6 +52,12 @@ function AdminDashboard() {
                   <Button>View shipper form submissions</Button>
                 </Link>
               </div>
+
+              <div className="btns">
+                <Link to="/view-contact">
+                  <Button>View contact form submissions</Button>
+                </Link>
+              </div>
             </div>
           </Col>
         </Row>

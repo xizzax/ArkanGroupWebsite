@@ -1,3 +1,5 @@
+//WALEED: make this component render a table of all shippers contact form submissions from database
+
 function ViewShipper(){
     return (
         <div>

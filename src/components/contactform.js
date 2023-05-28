@@ -11,6 +11,8 @@ function ContactForm() {
     // handle form submission here
     console.log("For submission", name, email, phone, signUp);
     window.alert("submitted!");
+    //WALEED: code to submit form data to database
+
     // Clear all input fields
     setName("");
     setEmail("");

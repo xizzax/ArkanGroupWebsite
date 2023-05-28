@@ -20,6 +20,7 @@ import EditExistingOption from "./edit-existing";
 import DeleteExistingOption from "./delete-existing";
 import ViewAllIDs from "./view-ids";
 import ViewExistingOption from "./view-existing";
+import ViewContact from "./view-contact-form";
 
 import { BrowserRouter, Switch, Route, Routes } from "react-router-dom";
 
@@ -48,8 +49,10 @@ function Index() {
           <Route path="edit-existing" element={<EditExistingOption />} />
           <Route path="delete-existing" element={<DeleteExistingOption />} />
           <Route path="view-ids" element={<ViewAllIDs />} />
+          <Route path="view-contact" element={<ViewContact />} />
           <Route path="view-existing" element={<ViewExistingOption />} />          
         </Routes>
+
         <Footer />
       
     </BrowserRouter>

@@ -1,10 +1,10 @@
 //WALEED: make this component render a table of all supplier contact form submissions from database
 
-function ViewSupplier(){
+function ViewContact(){
     return(
         <div>
-            <h1>View Supplier</h1>
+            <h1>ViewCOntact</h1>
         </div>
     )
 }
-export default ViewSupplier;
+export default ViewContact;
