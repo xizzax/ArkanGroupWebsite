@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase";
 
 function ContactForm() {
   const [name, setName] = useState("");
@@ -6,12 +8,18 @@ function ContactForm() {
   const [phone, setPhone] = useState("");
   const [signUp, setSignUp] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // handle form submission here
     console.log("For submission", name, email, phone, signUp);
     window.alert("submitted!");
-    //WALEED: code to submit form data to database
+
+    await addDoc(collection(db, "contact"), {
+      name,
+      email,
+      phone,
+      signUp,
+    });
 
     // Clear all input fields
     setName("");
@@ -80,7 +88,12 @@ function ContactForm() {
           Sign up for our newsletter
         </label>
         <br />
-        <input type="submit" value="Submit" className="btns-forms" id="contact-btn" />
+        <input
+          type="submit"
+          value="Submit"
+          className="btns-forms"
+          id="contact-btn"
+        />
       </form>
     </div>
   );

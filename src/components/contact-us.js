@@ -6,6 +6,7 @@ import mailIcon from "./srcs/mail-icon.png";
 import linkedInIcon from "./srcs/linkedin-icon.png";
 import networkIcon from "./srcs/network-icon.png";
 import ContactForm from "./contactform";
+
 function ContactUs() {
   return (
     <div className="about-us-main">
@@ -25,8 +26,7 @@ function ContactUs() {
                 <Button
                   href="mailto:200779@students.au.edu.pk"
                   target="_blank"
-                  className="email-button"
-                >
+                  className="email-button">
                   <img src={mailIcon} alt="mail icon" className="mail-icon" />{" "}
                   Email Us
                 </Button>
@@ -35,9 +35,8 @@ function ContactUs() {
               <div className="btns">
                 <Button
                   href="https://www.linkedin.com/company/arkan-group-impex/"
-                    target="_blank"
-                  className="email-button"
-                >
+                  target="_blank"
+                  className="email-button">
                   <img
                     src={linkedInIcon}
                     alt="linkedin icon"

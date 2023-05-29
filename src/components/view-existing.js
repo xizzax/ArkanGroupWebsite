@@ -1,32 +1,73 @@
 import "./styles/forms.css";
 import "./styles/admin-login.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { checkData } from "../utils/checkData";
 
 function ViewExistingOption() {
   const [productID, setProductID] = useState("");
+  const [isThere, setIsThere] = useState(false);
   const [jsonData, setJsonData] = useState({
     id: 1,
     name: "Example Name",
     description: "This is a sample description.",
-  }); 
+  });
   //DUMMY JSON DATA
- 
 
-  const lookUpID = (e) => {
+  const content = isThere ? (
+    <Row>
+      <Col md>
+        <div className="form-div">
+          <p>
+            <b>
+              <i>Product ID: </i>
+            </b>
+            {jsonData?.id}
+          </p>
+          <p>
+            <b>
+              <i>Product Name: </i>
+            </b>
+            {jsonData?.name}
+          </p>
+          <p>
+            <b>
+              <i>Product Description: </i>
+            </b>
+            {jsonData?.description}
+          </p>
+        </div>
+      </Col>
+    </Row>
+  ) : (
+    <div>...</div>
+  );
+
+  useEffect(() => {}, [jsonData, isThere]);
+
+  const lookUpID = async (e) => {
     e.preventDefault();
 
-    console.log("Look up ID");
-    console.log(productID);
+    const {
+      bool,
+      isPresent: { data },
+    } = await checkData(productID);
 
-    //WALEED: CHECK IF PRODUCT ID ALREADY EXISTS IN DATABASE
-    //WALEED: if product does NOT exist, show error message using window.alert()
-    //WALEED: if product exists, store product details in a JSON OBJECT called jsonData 
+    if (!bool) {
+      console.log("IM IN");
+      alert("Product Not Exists");
+      return;
+    }
 
-    
-    //re-render page with product details
+    setJsonData({
+      id: data?.productID,
+      name: data?.productName,
+      description: data?.productDescription,
+    });
 
+    setIsThere(bool);
   };
+
   return (
     <Container>
       <Row>
@@ -53,15 +94,7 @@ function ViewExistingOption() {
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col md>
-          <div className="form-div">
-            <p><b><i>Product ID: </i></b>{jsonData.id}</p>
-            <p><b><i>Product Name: </i></b>{jsonData.name}</p>
-            <p><b><i>Product Description: </i></b>{jsonData.description}</p>
-          </div>
-        </Col>
-      </Row>
+      {content}
     </Container>
   );
 }

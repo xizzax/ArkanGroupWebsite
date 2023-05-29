@@ -8,12 +8,12 @@ import OilGas from "./oil-gas";
 import ContactUs from "./contact-us";
 import Footer from "./footer";
 import SupplierForm from "./supplier";
-import ShippingForm from "./shipper"; 
+import ShippingForm from "./shipper";
 import AdminLogin from "./admin-login";
 import AdminDashboard from "./admin-dashboard";
 import TradingOptions from "./trading-options";
-import ViewShipper from "./view-shipper"; 
-import ViewSupplier from "./view-supplier"; 
+import ViewShipper from "./view-shipper";
+import ViewSupplier from "./view-supplier";
 import ChangeCredentials from "./change-credentials";
 import AddNewOption from "./add-new";
 import EditExistingOption from "./edit-existing";
@@ -22,7 +22,7 @@ import ViewAllIDs from "./view-ids";
 import ViewExistingOption from "./view-existing";
 import ViewContact from "./view-contact-form";
 
-import { BrowserRouter, Switch, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function Index() {
   return (
@@ -50,11 +50,11 @@ function Index() {
           <Route path="delete-existing" element={<DeleteExistingOption />} />
           <Route path="view-ids" element={<ViewAllIDs />} />
           <Route path="view-contact" element={<ViewContact />} />
-          <Route path="view-existing" element={<ViewExistingOption />} />          
+          <Route path="view-existing" element={<ViewExistingOption />} />
         </Routes>
 
         <Footer />
-      
+
     </BrowserRouter>
     </>
   );

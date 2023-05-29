@@ -3,27 +3,39 @@ import "./styles/forms.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-function ShippingForm() {
-  const [shippingCompany, setShippingCompany] = useState("");
-  const [whatToShip, setWhatToShip] = useState("");
-  const [whyChooseArkan, setWhyChooseArkan] = useState("");
-  const [defineYourself, setDefineYourself] = useState("");
-  const [howHeardAbout, setHowHeardAbout] = useState("");
-  const [expectations, setExpectations] = useState("");
 
-  const handleSubmit = (e) => {
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase";
+
+function ShippingForm() {
+  const [whatToShip, setWhatToShip] = useState("");
+  const [expectations, setExpectations] = useState("");
+  const [howHeardAbout, setHowHeardAbout] = useState("");
+  const [defineYourself, setDefineYourself] = useState("");
+  const [whyChooseArkan, setWhyChooseArkan] = useState("");
+  const [shippingCompany, setShippingCompany] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // handle form submission here
+
     console.log(
       "For submission",
-      shippingCompany,
       whatToShip,
+      expectations,
+      howHeardAbout,
       whyChooseArkan,
       defineYourself,
-      howHeardAbout,
-      expectations
+      shippingCompany
     );
-    //WALEED: code to submit form data to database
+
+    await addDoc(collection(db, "shipper"), {
+      whatToShip,
+      expectations,
+      howHeardAbout,
+      whyChooseArkan,
+      defineYourself,
+      shippingCompany,
+    });
 
     window.alert("submitted!");
     // Clear all input fields

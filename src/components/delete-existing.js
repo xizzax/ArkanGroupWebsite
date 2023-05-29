@@ -1,39 +1,93 @@
 import "./styles/forms.css";
 import "./styles/admin-login.css";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { checkData } from "../utils/checkData";
+import { deleteDoc, doc } from "firebase/firestore";
+import { db } from "../firebase";
 
 function DeleteExistingOption() {
   const [productID, setProductID] = useState("");
+  const [isThere, setIsThere] = useState(false);
   const [jsonData, setJsonData] = useState({
     id: 1,
     name: "Example Name",
     description: "This is a sample description.",
-  }); 
-  //DUMMY JSON DATA
- 
+  });
+  const [databaseID, setDatabaseID] = useState(0);
 
-  const lookUpID = (e) => {
+  const content = isThere ? (
+    <Row>
+      <Col md>
+        <div className="form-div">
+          <p>
+            <b>
+              <i>Product ID: </i>
+            </b>
+            {jsonData?.id}
+          </p>
+          <p>
+            <b>
+              <i>Product Name: </i>
+            </b>
+            {jsonData?.name}
+          </p>
+          <p>
+            <b>
+              <i>Product Description: </i>
+            </b>
+            {jsonData?.description}
+          </p>
+        </div>
+      </Col>
+    </Row>
+  ) : (
+    <div>...</div>
+  );
+
+  useEffect(() => {}, [jsonData, isThere, databaseID]);
+
+  const lookUpID = async (e) => {
     e.preventDefault();
 
-    console.log("Look up ID");
-    console.log(productID);
+    const {
+      bool,
+      isPresent: { id, data },
+    } = await checkData(productID);
 
-    //WALEED: CHECK IF PRODUCT ID ALREADY EXISTS IN DATABASE
-    //WALEED: if product does NOT exist, show error message using window.alert()
-    //WALEED: if product exists, store product details in a JSON OBJECT called jsonData 
+    setDatabaseID(id);
 
-    
-    //re-render page with product details
+    if (!bool) {
+      console.log("IM IN");
+      alert("Product Not Exists");
+      return;
+    }
 
+    setJsonData({
+      id: data?.productID,
+      name: data?.productName,
+      description: data?.productDescription,
+    });
+
+    setIsThere(bool);
   };
 
-    const deleteExisting = (e) => {
+  async function deleteProducts() {
+    console.log("ID Database", databaseID);
+
+    if (!databaseID) return alert("Product Not Exist");
+
+    await deleteDoc(doc(db, "products", `${databaseID}`));
+
+    alert("Product Deleted");
+  }
+
+  const deleteExisting = async (e) => {
     e.preventDefault();
-    //WALEED: code to delete product from database
-    //WALEED: show success message using window.alert()
-    //WALEED: re-render page with empty fields
-    }
+
+    await deleteProducts();
+  };
+
   return (
     <Container>
       <Row>
@@ -60,21 +114,18 @@ function DeleteExistingOption() {
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col md>
-          <div className="form-div">
-            <p><b><i>Product ID: </i></b>{jsonData.id}</p>
-            <p><b><i>Product Name: </i></b>{jsonData.name}</p>
-            <p><b><i>Product Description: </i></b>{jsonData.description}</p>
-          </div>
-        </Col>
-      </Row>
+
+      {content}
+
       <Row>
         <Col>
           <div className="form-div">
             <form className="admin-login-form" onSubmit={deleteExisting}>
-              
-              <input type="submit" value="DELETE OBJECT" className="btns-forms" />
+              <input
+                type="submit"
+                value="DELETE OBJECT"
+                className="btns-forms"
+              />
             </form>
           </div>
         </Col>

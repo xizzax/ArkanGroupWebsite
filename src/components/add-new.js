@@ -1,26 +1,40 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./styles/forms.css";
 import "./styles/admin-login.css";
 import { useState } from "react";
 
+import { db } from "../firebase";
+import { checkData } from "../utils/checkData";
+import { collection, addDoc } from "firebase/firestore";
+
 function AddNewOption() {
+  const [productID, setProductID] = useState("");
+  const [productName, setProductName] = useState("");
+  const [productDescription, setProductDescription] = useState("");
 
-    const [productID, setProductID] = useState("");
-    const [productName, setProductName] = useState("");
-    const [productDescription, setProductDescription] = useState("");
+  async function addProducts() {
+    const { bool } = await checkData(productID);
 
-    const handleAddNew = (e) => {
-        e.preventDefault();
-        console.log("Add new option");
-        console.log(productID);
-        console.log(productName);
-        console.log(productDescription);
-
-        //WALEED: CHECK IF PRODUCT ID ALREADY EXISTS IN DATABASE
-        // if product exists, show error message using window.alert()
-        //WALEED: Add code here to send data to backend
+    if (bool) {
+      alert("Data Already Exists");
+      return;
     }
 
+    console.log("IM OUT");
+    await addDoc(collection(db, "products"), {
+      productID,
+      productName,
+      productDescription,
+    });
+
+    alert("Data Added");
+  }
+
+  const handleAddNew = async (e) => {
+    e.preventDefault();
+
+    await addProducts();
+  };
 
   return (
     <Container>
@@ -32,45 +46,43 @@ function AddNewOption() {
       <Row>
         <Col>
           <div className="form-div">
-            <form
-              onSubmit={handleAddNew}
-              className="admin-login-form"
-            >
-                <label htmlFor="productID">Product ID</label>
-                <input
+            <form onSubmit={handleAddNew} className="admin-login-form">
+              <label htmlFor="productID">Product ID</label>
+              <input
+                type="text"
+                name="productID"
+                id="productID"
+                placeholder="Enter Product ID"
+                onChange={(e) => setProductID(e.target.value)}
+                value={productID}
+                required
+              />
+              <label htmlFor="productName">Product Name</label>
+              <input
+                type="text"
+                name="productName"
+                id="productName"
+                placeholder="Enter Product Name"
+                onChange={(e) => setProductName(e.target.value)}
+                value={productName}
+                required
+              />
+              <label htmlFor="productDescription">Product Description</label>
+              <input
+                type="text"
+                name="productDescription"
+                id="productDescription"
+                placeholder="Enter Product Description"
+                onChange={(e) => setProductDescription(e.target.value)}
+                value={productDescription}
+                required
+              />
 
-                    type="text"
-                    name="productID"
-                    id="productID"
-                    placeholder="Enter Product ID"
-                    onChange={(e) => setProductID(e.target.value)}
-                    value={productID}
-                    required
-                />
-                <label htmlFor="productName">Product Name</label>
-                <input
-                    type="text"
-                    name="productName"
-
-                    id="productName"
-                    placeholder="Enter Product Name"
-                    onChange={(e) => setProductName(e.target.value)}
-                    value={productName}
-                    required
-                />
-                <label htmlFor="productDescription">Product Description</label>
-                <input
-
-                    type="text"
-                    name="productDescription"
-                    id="productDescription"
-                    placeholder="Enter Product Description"
-                    onChange={(e) => setProductDescription(e.target.value)}
-                    value={productDescription}
-                    required
-                />
-
-              <input type="submit" value="Add New Option" className="btns-forms" />
+              <input
+                type="submit"
+                value="Add New Option"
+                className="btns-forms"
+              />
             </form>
           </div>
         </Col>

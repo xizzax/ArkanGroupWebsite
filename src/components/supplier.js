@@ -3,6 +3,8 @@ import "./styles/forms.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase";
 
 function SupplierForm() {
   const [companyName, setCompanyName] = useState("");
@@ -10,7 +12,7 @@ function SupplierForm() {
   const [whyArkan, setWhyArkan] = useState("");
   const [definingTrait, setDefiningTrait] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // handle form submission here
     console.log(
@@ -20,6 +22,13 @@ function SupplierForm() {
       whyArkan,
       definingTrait
     );
+
+    await addDoc(collection(db, "supplier"), {
+      whyArkan,
+      companyName,
+      shipmentType,
+      definingTrait,
+    });
 
     //WALEED: code to submit form data to database
     window.alert("submitted!");
