@@ -1,0 +1,52 @@
+.logo{
+    /* center this image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.about-us-main {
+  margin: 1em;
+}
+h2 {
+    text-align: center;
+    background-color: #000000;
+    padding: 0.1em;
+    /* font-weight: bold; */
+    color: #a63535;
+    border-radius: 7px;
+    margin-top: 0.5em;
+}
+
+.about-us-paragraph{
+    padding: 1em;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #a63535;
+}
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    background: #a63535 !important;
+    border-color: #a63535 !important;
+}
+
+.btn-primary:hover{
+    background: white !important;
+    border-color: #a63535 !important;
+    color: #a63535 !important;
+}                                         
+
+.div-buttons{
+    /* vertically space them     */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}

@@ -1,0 +1,63 @@
+.form-page {
+  margin: 1em;
+}
+.form-div {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+label {
+  display: block;
+  margin-top: 0.5em;
+  flex: 1;
+  font-size: 1.15em;
+}
+input {
+  display: block;
+  margin-bottom: 0.75em;
+  margin-top: 0.15em;
+  flex: 1;
+  width: 50vw;
+  border: 2px solid;
+  border-color: #a63535;
+  border-radius: 5px;
+}
+textarea {
+  display: block;
+  margin-top: 1em;
+  flex: 1;
+  width: 50vw;
+  border: 2px solid;
+  border-color: #a63535;
+  border-radius: 5px;
+}
+
+.btns-forms {
+  display: flex;
+  width: 50vw;
+  font-size: 1.15em;
+  height: 2em;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: white;
+  border-radius: 5px;
+  background: #a63535;
+  border-color: #a63535;
+}
+.btns-forms:active,
+.btns-forms:visited {
+  border-color: #a63535 !important;
+}
+
+.btns-forms:hover {
+  background: white !important;
+  border-color: #a63535 !important;
+  color: #a63535 !important;
+}
+
+#newsletter-checkbox{
+  display: inline-block;
+}
