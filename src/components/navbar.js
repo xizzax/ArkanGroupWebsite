@@ -32,7 +32,7 @@ function NavBar() {
                 <Nav.Link as={NavLink} to="/" className="link-name">Home</Nav.Link>
                 <Nav.Link as={NavLink} to="/about-us" className="link-name">About Us</Nav.Link>
                 <Nav.Link as={NavLink} to="/shipping" className="link-name">Shipping</Nav.Link>
-                <Nav.Link as={NavLink} to="/trading" className="link-name">Trading</Nav.Link>
+                {/* <Nav.Link as={NavLink} to="/trading" className="link-name">Trading</Nav.Link> */}
 {/* 
                 <NavDropdown title="Trading" id="basic-nav-dropdown" className="link-name">
                   <NavDropdown.Item as={NavLink} to="/agro">
