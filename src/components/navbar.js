@@ -32,6 +32,8 @@ function NavBar() {
                 <Nav.Link as={NavLink} to="/" className="link-name">Home</Nav.Link>
                 <Nav.Link as={NavLink} to="/about-us" className="link-name">About Us</Nav.Link>
                 <Nav.Link as={NavLink} to="/shipping" className="link-name">Shipping</Nav.Link>
+                <Nav.Link as={NavLink} to="/trading" className="link-name">Trading</Nav.Link>
+{/* 
                 <NavDropdown title="Trading" id="basic-nav-dropdown" className="link-name">
                   <NavDropdown.Item as={NavLink} to="/agro">
                     Agro Commodities
@@ -40,7 +42,7 @@ function NavBar() {
                     Fertilizers
                   </NavDropdown.Item>
                   <NavDropdown.Item as={NavLink} to="/oil-gas">Oil & Gas</NavDropdown.Item>
-                </NavDropdown>
+                </NavDropdown> */}
                 <Nav.Link as={NavLink} to="/contact-us" className="link-name">Contact Us</Nav.Link>
                 <Nav.Link as={NavLink} to="/admin-login" className="link-name">Admin Login</Nav.Link>
               </Nav>

@@ -21,6 +21,7 @@ import DeleteExistingOption from "./delete-existing";
 import ViewAllIDs from "./view-ids";
 import ViewExistingOption from "./view-existing";
 import ViewContact from "./view-contact-form";
+import Trading from "./trading";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -51,6 +52,8 @@ function Index() {
           <Route path="view-ids" element={<ViewAllIDs />} />
           <Route path="view-contact" element={<ViewContact />} />
           <Route path="view-existing" element={<ViewExistingOption />} />
+          <Route path="trading" element={<Trading />} />
+
         </Routes>
 
         <Footer />
